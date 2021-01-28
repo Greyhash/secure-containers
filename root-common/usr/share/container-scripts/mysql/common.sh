@@ -194,22 +194,22 @@ EOSQL
   fi
 
 
-  # Remove anonymous user and test db
-  mysql $mysql_flags <<EOSQL
-  DELETE FROM mysql.global_priv WHERE User='';
-EOSQL
+#   # Remove anonymous user and test db
+#   mysql $mysql_flags <<EOSQL
+#   DELETE FROM mysql.global_priv WHERE User='';
+# EOSQL
 
-  mysql $mysql_flags <<EOSQL
-  DROP DATABASE IF EXISTS test;
-EOSQL
+#   mysql $mysql_flags <<EOSQL
+#   DROP DATABASE IF EXISTS test;
+# EOSQL
 
-  mysql $mysql_flags <<EOSQL
-  DELETE FROM mysql.db WHERE Db='test'
-EOSQL
+#   mysql $mysql_flags <<EOSQL
+#   DELETE FROM mysql.db WHERE Db='test'
+# EOSQL
   
-  mysql $mysql_flags <<EOSQL
-  FLUSH PRIVILEGES;
-EOSQL
+#   mysql $mysql_flags <<EOSQL
+#   FLUSH PRIVILEGES;
+# EOSQL
 # END anonymous user and test db
   
   log_info 'Initialization finished'
