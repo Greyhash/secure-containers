@@ -58,6 +58,7 @@ COPY 8.0/root /
 
 COPY /check_packages.sh /bin/
 
+COPY init.sql /docker-entrypoint-initdb.d/01_init.sql
 
 # this is needed due to issues with squash
 # when this directory gets rm'd by the container-setup
